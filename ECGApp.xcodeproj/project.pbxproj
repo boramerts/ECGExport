@@ -106,6 +106,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 9002864D3082591F00E9CC53;
 			minimizedProjectReferenceProxies = 1;
@@ -199,6 +200,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -256,6 +258,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -275,7 +278,8 @@
 				INFOPLIST_FILE = ECGApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ECGExport;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health share usage";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "ECGExport needs permission to read your previously recorded Apple Watch ECG measurements so you can select and export them as CSV files for research and analysis. Your health data is processed locally and is never uploaded to our servers.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app only reads existing ECG recordings for export. It does not write, modify, or delete health data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -318,7 +322,8 @@
 				INFOPLIST_FILE = ECGApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ECGExport;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health share usage";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "ECGExport needs permission to read your previously recorded Apple Watch ECG measurements so you can select and export them as CSV files for research and analysis. Your health data is processed locally and is never uploaded to our servers.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app only reads existing ECG recordings for export. It does not write, modify, or delete health data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
