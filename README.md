@@ -202,9 +202,9 @@ See the repository's `LICENSE` file for the applicable license and terms of use.
 
 ECGExport is built using:
 
-- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
-- [Apple HealthKit](https://developer.apple.com/documentation/healthkit)
-- [ZIPFoundation](https://github.com/weichsel/ZIPFoundation)
+- SwiftUI
+- Apple HealthKit
+- ZIPFoundation
 
 Apple, Apple Watch, Apple Health, and HealthKit are trademarks of Apple Inc.
 
