@@ -145,6 +145,7 @@ struct ContentView: View {
                 Text(manager.errorMessage ?? "")
             }
         }
+        .tint(Color("AppColor"))
     }
 
     private var recordingList: some View {
@@ -166,7 +167,7 @@ struct ContentView: View {
                                 .font(.title2)
                                 .foregroundStyle(
                                     selectedIDs.contains(ecg.uuid)
-                                    ? Color.accentColor
+                                    ? Color("AppColor")
                                     : Color.secondary
                                 )
 
@@ -219,6 +220,7 @@ struct ContentView: View {
                                 .padding(10)
                         }
                         .buttonStyle(.borderless)
+                        .foregroundStyle(Color("AppColor"))
                         .accessibilityLabel(t("editSubject"))
                     }
                 }
@@ -245,57 +247,113 @@ struct ContentView: View {
 
                         invalidateExport()
                     }
+                    .foregroundStyle(Color("AppColor"))
                     .textCase(nil)
                 }
             }
         }
     }
 
+    
     private var exportControls: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 14) {
 
-            Text("\(selectedIDs.count) \(t("selected"))")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+            HStack {
+                Image(systemName: "checkmark.circle")
+                    .foregroundStyle(.secondary)
 
-            Button {
-                Task {
-                    await exportSelected()
+                Text("\(selectedIDs.count) \(t("selected"))")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.secondary)
+
+                Spacer()
+
+                if isExporting {
+                    ProgressView()
+                        .controlSize(.small)
                 }
-            } label: {
-                HStack {
-                    if isExporting {
-                        ProgressView()
-                            .tint(.white)
-                    } else {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-
-                    Text(
-                        isExporting
-                        ? t("exporting")
-                        : t("export")
-                    )
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
             }
-            .buttonStyle(.borderedProminent)
-            .disabled(selectedIDs.isEmpty || isExporting)
 
-            if let exportURL {
-                ShareLink(item: exportURL) {
-                    Label(
-                        t("share"),
-                        systemImage: "square.and.arrow.up"
-                    )
+            HStack(spacing: 10) {
+
+                // Export button
+                Button {
+                    Task {
+                        await exportSelected()
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        if isExporting {
+                            ProgressView()
+                                .tint(.white)
+                        } else {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+
+                        Text(
+                            isExporting
+                            ? t("exporting")
+                            : t("export")
+                        )
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
+                    }
                     .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .contentShape(Rectangle())
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.plain)
+                .foregroundStyle(.white)
+                .background(
+                    selectedIDs.isEmpty || isExporting
+                    ? Color("AppColor").opacity(0.4)
+                    : Color("AppColor"),
+                    in: RoundedRectangle(cornerRadius: 14)
+                )
+                .disabled(selectedIDs.isEmpty || isExporting)
+
+                // Share button
+                if let exportURL {
+                    ShareLink(item: exportURL) {
+                        HStack(spacing: 8) {
+                            Image(systemName: "square.and.arrow.up.on.square")
+
+                            Text(t("share"))
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.75)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(Color("AppColor"))
+                    .background(
+                        Color("AppColor").opacity(0.1),
+                        in: RoundedRectangle(cornerRadius: 14)
+                    )
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 14)
+                            .strokeBorder(
+                                Color("AppColor").opacity(0.25),
+                                lineWidth: 1
+                            )
+                    }
+                }
             }
         }
-        .padding()
+        .padding(.horizontal, 16)
+        .padding(.vertical, 16)
+        .frame(maxWidth: .infinity)
+        .background(.regularMaterial)
+        .overlay(alignment: .top) {
+            Divider()
+        }
     }
+
 
     private func toggleSelection(_ id: UUID) {
         if selectedIDs.contains(id) {

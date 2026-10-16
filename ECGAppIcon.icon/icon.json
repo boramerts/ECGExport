@@ -1,31 +1,27 @@
 {
   "fill" : {
     "linear-gradient" : [
-      "display-p3:0.49666,0.96787,0.50082,1.00000",
-      "display-p3:0.34054,0.72482,0.34224,1.00000"
+      "display-p3:0.43987,0.77308,0.19990,1.00000",
+      "display-p3:0.45318,0.67906,0.25584,1.00000"
     ]
   },
   "groups" : [
     {
       "layers" : [
         {
-          "glass" : true,
-          "hidden-specializations" : [
-            {
-              "idiom" : "square",
-              "value" : false
-            }
-          ],
-          "image-name" : "waveform.path.ecg 3.svg",
-          "name" : "waveform.path.ecg 3",
+          "fill" : {
+            "solid" : "extended-gray:1.00000,1.00000"
+          },
+          "image-name" : "ecgIcon 2.svg",
+          "name" : "ecgIcon 2",
           "position-specializations" : [
             {
-              "idiom" : "square",
+              "idiom" : "iOS",
               "value" : {
-                "scale" : 1.8,
+                "scale" : 3.47,
                 "translation-in-points" : [
-                  84,
-                  158.13189999999997
+                  184,
+                  0.5944518018304734
                 ]
               }
             }
@@ -43,9 +39,8 @@
     }
   ],
   "supported-platforms" : {
-    "circles" : [
-      "watchOS"
-    ],
-    "squares" : "shared"
+    "squares" : [
+      "iOS"
+    ]
   }
 }

@@ -1,3 +1,5 @@
+<img width="100%" alt="ECGExport Banner" src="github_banner.png" />
+
 # ECGExport
 
 **Export your Apple Watch ECG recordings as numerical data.**

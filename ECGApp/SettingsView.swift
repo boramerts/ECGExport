@@ -25,7 +25,6 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-
             Section {
                 Picker(
                     t("language"),
@@ -76,8 +75,11 @@ struct SettingsView: View {
                     AboutView()
                 } label: {
                     Label(
-                        t("about"),
-                        systemImage: "info.circle"
+                        title: { Text(t("about")) },
+                        icon: {
+                            Image(systemName: "info.circle")
+                            .foregroundStyle(Color("AppColor"))
+                        }
                     )
                 }
             }
@@ -110,7 +112,7 @@ private struct AboutView: View {
                         .font(.system(size: 48))
                         .foregroundStyle(.tint)
 
-                    Text("ECG Exporter")
+                    Text("ECGExport")
                         .font(.title2)
                         .fontWeight(.semibold)
 
@@ -129,20 +131,25 @@ private struct AboutView: View {
                     value: appVersion
                 )
             }
-
-            Section {
-                Text(t("privacyDescription"))
-                    .font(.subheadline)
-            }
             Section {
                 Link(
                     t("privacyPolicy"),
                     destination: URL(
-                        string: language == "tr"
-                            ? "YOUR_TURKISH_GIST_URL"
-                            : "YOUR_ENGLISH_GIST_URL"
+                        string: "https://gist.github.com/boramerts/3c6e2d82999a1e9c2987fcf9485cae1a"
                     )!
                 )
+            }
+            Section {
+                Link(
+                    "Github",
+                    destination: URL(
+                        string: "https://github.com/boramerts/ECGExport"
+                    )!
+                )
+            }
+            Section {
+                Text(t("privacyDescription"))
+                    .font(.subheadline)
             }
         }
         .navigationTitle(t("about"))

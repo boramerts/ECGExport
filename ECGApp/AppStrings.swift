@@ -35,11 +35,29 @@ enum AppStrings {
                 "Export previously recorded Apple Watch ECG voltage measurements for signal analysis.",
                 "Önceden kaydedilmiş Apple Watch EKG voltaj ölçümlerini sinyal analizi için dışa aktarın."
             ),
+            
             "privacyDescription": (
-                "ECG data is processed locally. No data is uploaded to a server.",
-                "EKG verileri cihazda işlenir. Hiçbir veri sunucuya yüklenmez."
+                """
+                ECG Exporter respects your privacy and keeps your health data under your control.
+
+                Your ECG recordings are accessed securely through Apple HealthKit with your permission. All ECG measurements are processed locally on your device. The app does not collect or upload your health information to external servers.
+
+                Subject IDs and application preferences are stored locally. ECG recordings are only exported when you explicitly choose to do so. You have full control over where exported files are saved or shared.
+
+                ECG Exporter does not use advertising, analytics, or tracking services, and your original recordings in Apple Health are never modified or deleted.
+                """,
+                """
+                ECG Exporter gizliliğinize saygı duyar ve sağlık verilerinizin kontrolünü size bırakır.
+
+                EKG kayıtlarınıza, izniniz doğrultusunda Apple HealthKit aracılığıyla güvenli bir şekilde erişilir. Tüm EKG ölçümleri cihazınızda yerel olarak işlenir. Uygulama, sağlık bilgilerinizi toplamaz veya harici sunuculara yüklemez.
+
+                Katılımcı kimlikleri ve uygulama tercihleri cihazınızda saklanır. EKG kayıtları yalnızca sizin açıkça dışa aktarma işlemini başlatmanız durumunda dışa aktarılır. Oluşturulan dosyaların nereye kaydedileceği veya kimlerle paylaşılacağı tamamen sizin kontrolünüzdedir.
+
+                ECG Exporter reklam, analiz veya kullanıcı takibi hizmetleri kullanmaz. Apple Sağlık uygulamasındaki orijinal EKG kayıtlarınız hiçbir zaman değiştirilmez veya silinmez.
+                """
             ),
-            "appTitle": ("ECG Exporter", "EKG Aktarıcı"),
+
+            "appTitle": ("ECGExport", "ECGExport"),
             "refresh": ("Refresh", "Yenile"),
             "noRecordings": ("No ECG Recordings", "EKG Kaydı Bulunamadı"),
             "noRecordingsDetail": (
