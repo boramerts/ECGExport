@@ -1,0 +1,79 @@
+
+# ==========================================
+# ECG Exporter - Git Ignore
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode - User-specific settings
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# Xcode - Build artifacts
+build/
+Build/
+DerivedData/
+*.ipa
+*.app
+*.dSYM
+*.dSYM.zip
+*.xcarchive
+
+# Xcode - Temporary files
+*.hmap
+*.ipa
+*.swiftdoc
+*.swiftmodule
+*.swiftsourceinfo
+
+# Swift Package Manager
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/configuration/registries.json
+
+# Signing and credentials
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.key
+*.pem
+*.entitlements.bak
+.env
+.env.*
+!.env.example
+
+# ECG exports and sensitive health data
+*.csv
+*.tsv
+*.edf
+*.bdf
+*.hea
+*.dat
+*.h5
+*.hdf5
+
+# Exported archives
+*.zip
+*.tar
+*.tar.gz
+
+# Local test data
+ECGExports/
+Exports/
+TestData/Private/
+PrivateData/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*~
