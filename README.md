@@ -72,7 +72,7 @@ ECGExport does not introduce additional signal processing during export.
 - An iPhone with access to Apple Health ECG recordings
 - Previously recorded ECGs from a compatible Apple Watch
 - HealthKit ECG read authorization
-- iOS 17 or later
+- iOS 18.6 or later
 
 For development:
 
