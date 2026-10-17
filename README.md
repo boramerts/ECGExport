@@ -30,8 +30,6 @@ Apple Watch ECG recordings contain numerical voltage measurements that can be ac
 
 Although Apple Health provides PDF reports of ECG recordings, these reports are intended primarily for viewing and sharing. ECGExport accesses the underlying waveform measurements directly through HealthKit.
 
-The export process follows five steps:
-
 ## Exported Data
 
 ECGExport preserves the individual measurements returned by HealthKit without applying additional signal filtering, normalization, or resampling.
